@@ -5,6 +5,7 @@ import cors from "cors"
 import { connectDB } from './db/mongoDb';
 import deporteRouter from './router/deporteRouter';
 import { errorHandler } from './middlewares/errorHandler';
+import digimonRouter from './router/digimonRouter';
 
 const app = express();
 const PORT = process.env.PORT
@@ -19,6 +20,8 @@ app.use(cors({
 app.use(express.json())
 
 app.use("/deportes", deporteRouter)
+
+app.use("/digimons", digimonRouter)
 
 app.use(errorHandler)
 

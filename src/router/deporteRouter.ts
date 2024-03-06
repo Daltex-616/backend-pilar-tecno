@@ -1,6 +1,4 @@
 import { Router } from "express";
-
-
 import { createDeportesController } from "../controller/createDeportesController";
 import { getDeportesControllers } from "../controller/getDeporteController";
 import { getDeporteByIdController } from "../controller/getDeporteByIdController";
@@ -19,7 +17,7 @@ deporteRouter.get("/:id", getDeporteByIdController)
 
 deporteRouter.post("/",validateDeporteBody, createDeportesController)
 
-deporteRouter.put("/:id",validateDeporteBody ,updateDeportesController)
+deporteRouter.put("/:id",updateDeportesController)
 
 deporteRouter.delete("/:id", deleteDeporteController)
 
