@@ -14,3 +14,8 @@ export async function getDeporteById(id:string) {
     const digimon =  await Digimon.findById(id)
     return digimon?.toJSON()
 }
+
+export async function createDigimon(digimonData:Idigimon) {
+    const digimon = new Digimon(digimonData)
+    return digimon.save()
+}
